@@ -73,5 +73,14 @@ tweets_df.to_csv(FILE_PATH)
 
 # In[ ]:
 
+## way to retrieve tweets with sentiment
 
+public_tweets = api.search('iPhoneX',lang="en", count=200)
+with open("sentiment1.csv",'w') as scorefile:
+    scoreFileWriter = csv.writer(scorefile) 
+    for tweet in public_tweets:
+        print(tweet.text)
+        analysis = TextBlob(tweet.text)
+        print(analysis.sentiment)
+        scoreFileWriter.writerow([tweet.text,analysis.sentiment])
 
