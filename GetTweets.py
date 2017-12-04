@@ -247,8 +247,9 @@ def wordcloud_draw(data, color = 'black'):
 print("Positive words")
 wordcloud_draw(train_pos,'white')
 
+print("Negative words")
+wordcloud_draw(train_neg)
 
-# In[ ]:
 
 
 
