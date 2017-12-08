@@ -250,8 +250,13 @@ wordcloud_draw(train_pos,'white')
 print("Negative words")
 wordcloud_draw(train_neg)
 
+positive = [ tweet for index, tweet in enumerate(data['Tweets']) if data['Sentiment'][index] > 0]
+neutral = [ tweet for index, tweet in enumerate(data['Tweets']) if data['Sentiment'][index] == 0]
+negative = [ tweet for index, tweet in enumerate(data['Tweets']) if data['Sentiment'][index] < 0]
 
-
+print("Percentage of positive tweets: {}%".format(len(positive)*100/len(data['Tweets'])))
+print("Percentage of neutral tweets: {}%".format(len(neutral)*100/len(data['Tweets'])))
+print("Percentage of negative tweets: {}%".format(len(negative)*100/len(data['Tweets'])))
 
 
 
