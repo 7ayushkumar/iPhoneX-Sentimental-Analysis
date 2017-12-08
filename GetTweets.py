@@ -259,5 +259,13 @@ print("Percentage of neutral tweets: {}%".format(len(neutral)*100/len(data['Twee
 print("Percentage of negative tweets: {}%".format(len(negative)*100/len(data['Tweets'])))
 
 
+sources = []
+for source in data['Source']:
+    if source not in sources:
+        sources.append(source)
 
+# We print sources list:
+print("Creation of content sources:")
+for source in sources:
+    print("* {}".format(source))
 
